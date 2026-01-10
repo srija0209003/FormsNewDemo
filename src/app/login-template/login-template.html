@@ -1,0 +1,13 @@
+<p>login-template driven format</p>
+<form #login="ngForm" (ngSubmit)="submitData(login)">
+    <fieldset>
+        <legend>Login Form</legend>
+        <label for ="username">Username:</label>
+        <input type="text" id="username" name="username" ngModel required>
+        <br>
+        <label for ="password">Password:</label>
+        <input type="password" id="password" name="password" ngModel  minLength="6" required>
+        <br>
+        <button type="submit" >Login</button>
+    </fieldset>
+</form>
