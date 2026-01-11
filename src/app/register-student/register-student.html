@@ -53,12 +53,12 @@
  <!-- Skills FormArray -->
     <div formArrayName="studskills">
       <label>Skills</label>
-      <div *ngFor="let skillCtrl of studskills.controls; let i = index;">
+      <div *ngFor="let skill of studskills.controls; let i = index;">
         <input [formControlName]="i">
         <button type="button" (click)="removeSkills(i)">Remove</button>
       </div>
     </div>
- 
-        <button type="submit" >CreateStudent</button>
+
+        <button type="submit" [disabled]="registerStud.invalid">CreateStudent</button>
     </fieldset>
 </form>

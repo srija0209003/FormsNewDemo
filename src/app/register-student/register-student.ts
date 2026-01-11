@@ -18,11 +18,7 @@ export class RegisterStudent {
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
       confirmpassword: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
       skillInput: [''],
-      studskills: this.fb.array([
-        this.fb.control('C'),
-        this.fb.control('C++'),
-        this.fb.control('C#')
-      ])
+      studskills: this.fb.array([])
     });
   }
 
