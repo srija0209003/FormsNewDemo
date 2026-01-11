@@ -8,20 +8,23 @@ import { LoginTemplate } from './login-template/login-template';
 import { LoginFormReactive } from './login-form-reactive/login-form-reactive';
 import { RouterModule } from '@angular/router';
 import { RegisterUser } from './register-user/register-user';
+import { RegisterStudent } from './register-student/register-student';
 
 @NgModule({
   declarations: [
     App,
     LoginTemplate,
     LoginFormReactive,
-    RegisterUser
+    RegisterUser,
+    RegisterStudent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule, //template driven forms
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

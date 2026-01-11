@@ -1,0 +1,64 @@
+<form [formGroup]="registerStud" (ngSubmit)="submit()">
+    <fieldset>
+        <legend>Register Student</legend>
+        <div>
+            <label for="username">Enter Username</label>
+            <input type="text" formControlName="username">
+            <div *ngIf="registerStud.get('username')?.invalid && registerStud.get('username')?.touched">
+                Username is Required field
+            </div>
+        </div>
+ 
+          <div>
+            <label for="email">Enter Email</label>
+            <input type="text" formControlName="email">
+            <div *ngIf="registerStud.get('email')?.invalid && registerStud.get('email')?.touched">
+               Emial is Required field
+            </div>
+        </div>
+ 
+        <div>
+            <label for="password">Enter Password</label>
+            <input type="text" formControlName="password">
+            <div *ngIf="registerStud.get('password')?.invalid && registerStud.get('password')?.touched">
+               Password is Required field
+            </div>
+        </div>
+ 
+        <div>
+            <label for="confirmpassword">Enter confirmpassword</label>
+            <input type="text" formControlName="confirmpassword">
+            <div *ngIf="registerStud.get('confirmpassword')?.invalid && registerStud.get('confirmpassword')?.touched">
+               Password is Required field
+            </div>
+        </div>
+ 
+        <div>
+            <label for="mobileno">Enter Mobile NO</label>
+            <input type="number" formControlName="mobileno">
+            <div *ngIf="registerStud.get('mobileno')?.invalid && registerStud.get('mobileno')?.touched">
+               Password is Required field
+            </div>
+        </div>
+ 
+
+    <!-- Skill input and actions -->
+    <div>
+      <label for="skillInput">Enter Skill:</label>
+      <input id="skillInput" type="text" formControlName="skillInput">
+      <button type="button" (click)="addSkills()">Add Skill</button>
+      <button type="button" (click)="getSkills()">Get Skills</button>
+    </div>
+
+ <!-- Skills FormArray -->
+    <div formArrayName="studskills">
+      <label>Skills</label>
+      <div *ngFor="let skillCtrl of studskills.controls; let i = index;">
+        <input [formControlName]="i">
+        <button type="button" (click)="removeSkills(i)">Remove</button>
+      </div>
+    </div>
+ 
+        <button type="submit" >CreateStudent</button>
+    </fieldset>
+</form>
