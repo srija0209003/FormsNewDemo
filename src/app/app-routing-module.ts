@@ -4,12 +4,14 @@ import { LoginTemplate } from './login-template/login-template';
 import { LoginFormReactive } from './login-form-reactive/login-form-reactive';
 import { RegisterUser } from './register-user/register-user';
 import { RegisterStudent } from './register-student/register-student';
+import { UserWorking } from './user-working/user-working';
 
 const routes: Routes = [
   {path:"Login", component: LoginTemplate},
   {path:"LoginValidation",component: LoginFormReactive},
   {path:"RegisterUser",component: RegisterUser},
-  {path:"RegisterStudent",component: RegisterStudent}
+  {path:"RegisterStudent",component: RegisterStudent},
+  {path:"UserRegistration",component:UserWorking}
 ];
 
 @NgModule({

@@ -48,7 +48,13 @@ export class RegisterStudent {
   }
 
   submit(): void {
-    console.log(this.registerStud.value);
-    alert('Student registered successfully!');
+    if(this.registerStud.value.password !== this.registerStud.value.confirmpassword){
+      alert('Password and Confirm Password do not match!');
+      return;
+    }else{
+      console.log(this.registerStud.value);
+      alert('Student registered successfully!');
+    }
+    
   }
 }

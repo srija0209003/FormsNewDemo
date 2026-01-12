@@ -9,6 +9,9 @@ import { LoginFormReactive } from './login-form-reactive/login-form-reactive';
 import { RouterModule } from '@angular/router';
 import { RegisterUser } from './register-user/register-user';
 import { RegisterStudent } from './register-student/register-student';
+import { UserWorking } from './user-working/user-working';
+import { DeptWorking } from './dept-working/dept-working';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { RegisterStudent } from './register-student/register-student';
     LoginTemplate,
     LoginFormReactive,
     RegisterUser,
-    RegisterStudent
+    RegisterStudent,
+    UserWorking,
+    DeptWorking
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,6 @@ import { RegisterStudent } from './register-student/register-student';
   providers: [
     provideBrowserGlobalErrorListeners(),
   ],
-  bootstrap: [App]
+  bootstrap: [DeptWorking]
 })
 export class AppModule { }

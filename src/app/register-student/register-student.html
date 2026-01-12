@@ -34,6 +34,7 @@
         </div>
  
         <div>
+            
             <label for="mobileno">Enter Mobile NO</label>
             <input type="number" formControlName="mobileno">
             <div *ngIf="registerStud.get('mobileno')?.invalid && registerStud.get('mobileno')?.touched">
@@ -53,10 +54,12 @@
  <!-- Skills FormArray -->
     <div formArrayName="studskills">
       <label>Skills</label>
-      <div *ngFor="let skill of studskills.controls; let i = index;">
-        <input [formControlName]="i">
+      <ul>
+      <li *ngFor="let skill of studskills.controls; let i = index;">
+        {{skill.value}}
         <button type="button" (click)="removeSkills(i)">Remove</button>
-      </div>
+      </li>
+    </ul>
     </div>
 
         <button type="submit" [disabled]="registerStud.invalid">CreateStudent</button>
