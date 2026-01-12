@@ -1,1 +1,19 @@
+<button type="submit" (click)="showAllDepts()">Show All Departments</button>
+<ul>
+    <li *ngFor="let d of deptarr">
+        {{d.deptId}}---{{d.dname}}
+    </li>
+</ul>
+<input type="text" [(ngModel)]="deptId" placeholder="Enter Dept ID"/>
+<button type="submit" (click)="callbyid(deptId)">Get By ID</button>
 
+<form>
+    <input type="text" [(ngModel)]="deptname" placeholder="Enter Dept Name " name="first"/>
+    <input type="text" [(ngModel)]="deptId" placeholder="Enter Dept ID" name="second"/>
+    <button type="submit" (click)="updateDept(deptId,deptname)">Update Dept</button>
+</form>
+
+<form>
+    <input type="text" [(ngModel)]="deptId" placeholder="Enter Dept ID" name="third"/>
+    <button type="submit" (click)="deleteDept(deptId)">Delete Dept</button>
+</form>

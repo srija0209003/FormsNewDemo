@@ -11,6 +11,7 @@ import { RegisterUser } from './register-user/register-user';
 import { RegisterStudent } from './register-student/register-student';
 import { UserWorking } from './user-working/user-working';
 import { DeptWorking } from './dept-working/dept-working';
+import { DeptService } from './dept-service';
 
 
 @NgModule({
@@ -29,10 +30,12 @@ import { DeptWorking } from './dept-working/dept-working';
     FormsModule, //template driven forms
     ReactiveFormsModule,
     RouterModule,
+    FormsModule
     
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
+    DeptService
   ],
   bootstrap: [DeptWorking]
 })
